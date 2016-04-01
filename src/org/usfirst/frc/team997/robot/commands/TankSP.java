@@ -40,6 +40,9 @@ public class TankSP extends Command {
     		lastLeft -= maxAccel;
     		left = lastLeft;
     		SmartDashboard.putBoolean("Max out Left", true);
+    	} else if ((lastLeft < 0 && left > 0) || (lastLeft > 0 && left < 0)) {
+    		lastLeft = left;
+    		SmartDashboard.putBoolean("Max out Left", true);
     	} else {
     		lastLeft = left;
     		SmartDashboard.putBoolean("Max out Left", false);
@@ -54,6 +57,9 @@ public class TankSP extends Command {
     	} else if (lastRight - right> maxAccel) {
     		lastRight -= maxAccel;
     		right = lastRight;
+    		SmartDashboard.putBoolean("Max out Right", true);
+    	} else if ((lastRight < 0 && right > 0) || (lastRight > 0 && right < 0)) {
+    		lastRight = right;
     		SmartDashboard.putBoolean("Max out Right", true);
     	} else {
     		lastRight = right;
