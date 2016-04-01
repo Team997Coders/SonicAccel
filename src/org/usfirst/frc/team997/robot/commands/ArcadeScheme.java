@@ -1,11 +1,13 @@
 package org.usfirst.frc.team997.robot.commands;
 
+import org.usfirst.frc.team997.robot.Controller;
+
 public class ArcadeScheme implements ControlScheme {
-	public double getLeft(double left, double right) {
-		return left - right;
+	public double getLeft(Controller c) {
+		return c.getLeftRawY() - c.getRightRawX();
 	}
 
-	public double getRight(double left, double right) {
-		return left + right;
+	public double getRight(Controller c) {
+		return c.getLeftRawY() + c.getRightRawX();
 	}
 }

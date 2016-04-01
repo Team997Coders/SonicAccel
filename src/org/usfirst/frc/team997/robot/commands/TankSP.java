@@ -21,10 +21,8 @@ public class TankSP extends Command {
     
     protected void initialize() {}
     protected void execute() {
-    	double l = Robot.deadband(Robot.oi.controller.getLeftRawY());
-    	double r = Robot.deadband(Robot.oi.controller.getRightRawY/*getRightRawX*/());
-    	double left = controlMap.getLeft(l, r);
-    	double right = controlMap.getRight(l, r);
+    	double left = controlMap.getLeft(Robot.oi.controller);
+    	double right = controlMap.getRight(Robot.oi.controller);
 
     	SmartDashboard.putNumber("Input Left", left);
     	SmartDashboard.putNumber("Input Right", right);

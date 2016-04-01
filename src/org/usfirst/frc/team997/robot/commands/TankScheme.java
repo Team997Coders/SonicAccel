@@ -1,11 +1,13 @@
 package org.usfirst.frc.team997.robot.commands;
 
+import org.usfirst.frc.team997.robot.Controller;
+
 public class TankScheme implements ControlScheme {
-	public double getLeft(double left, double right) {
-		return left;
+	public double getLeft(Controller c) {
+		return c.getLeftRawY();
 	}
 
-	public double getRight(double left, double right) {
-		return right;
+	public double getRight(Controller c) {
+		return c.getRightRawY();
 	}
 }

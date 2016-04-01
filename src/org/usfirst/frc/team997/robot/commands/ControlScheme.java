@@ -1,6 +1,8 @@
 package org.usfirst.frc.team997.robot.commands;
 
+import org.usfirst.frc.team997.robot.Controller;
+
 public interface ControlScheme {
-	double getLeft(double left, double right);
-	double getRight(double left, double right);
+	double getLeft(Controller c);
+	double getRight(Controller c);
 }
